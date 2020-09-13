@@ -10,8 +10,14 @@ namespace Jwt.Models
     /// </summary>
     public class JwtOptions : JwtBearerOptions
     {
+        /// <summary>
+        /// This parameter get value "mySecurityKey" when null value.
+        /// </summary>
         public string SecurityKey { get; set; } = "mySecurityKey";
 
+        /// <summary>
+        /// This parameter get value 120 when null value.
+        /// </summary>
         public int LifeTimeMins { get; set; } = 120;
     }
 }

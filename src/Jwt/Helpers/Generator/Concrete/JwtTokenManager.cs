@@ -4,6 +4,7 @@ using Microsoft.IdentityModel.Tokens;
 using System;
 using System.Collections.Generic;
 using System.IdentityModel.Tokens.Jwt;
+using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
 using System.Security.Claims;
 using System.Text;
@@ -81,6 +82,14 @@ namespace Jwt.Helpers.Generator.Concrete
         public async Task<string> GenerateJwtTokenAsync()
         {
             return await GenerateJwtTokenAsync(new Claim[0],Algorithms.HmacSha256Signature);
+        }
+
+        public async Task<Claim[]> GenerateClaimsAsync(List<ClaimDto> claimDto)
+        {
+            var claims = new List<Claim>();
+            foreach (var claim in claimDto)
+                claims.Add(new Claim(claim.Type, claim.Value));
+            return claims.ToArray();
         }
     }
 }
