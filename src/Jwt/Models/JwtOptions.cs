@@ -11,5 +11,7 @@ namespace Jwt.Models
     public class JwtOptions : JwtBearerOptions
     {
         public string SecurityKey { get; set; } = "mySecurityKey";
+
+        public int LifeTimeMins { get; set; } = 120;
     }
 }
