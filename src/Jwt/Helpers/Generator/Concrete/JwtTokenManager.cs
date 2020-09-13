@@ -13,14 +13,21 @@ using System.Threading.Tasks;
 
 namespace Jwt.Helpers.Generator.Concrete
 {
+    /// <summary>
+    /// This class includes implementations for jwt token generator.
+    /// </summary>
     public class JwtTokenManager : IJwtTokenService
     {
+        #region Fields
         private readonly JwtOptions jwtOptions;
 
         public JwtTokenManager(JwtOptions jwtOptions)
         {
             this.jwtOptions = jwtOptions;
         }
+        #endregion
+
+        #region Generate Jwt Token
         public async Task<string> GenerateJwtTokenAsync(Claim[] claims, Algorithms algorithm)
         {
             var tokenHandler = new JwtSecurityTokenHandler();
@@ -85,6 +92,9 @@ namespace Jwt.Helpers.Generator.Concrete
             return await GenerateJwtTokenAsync(new Claim[0],Algorithms.HmacSha256Signature);
         }
 
+        #endregion
+
+        #region Generate Claims
         public async Task<Claim[]> GenerateClaimsAsync(List<ClaimDto> claimDto)
         {
             var claims = new List<Claim>();
@@ -92,7 +102,9 @@ namespace Jwt.Helpers.Generator.Concrete
                 claims.Add(new Claim(claim.Type, claim.Value));
             return claims.ToArray();
         }
+        #endregion
 
+        #region Generate Refresh Token
         public Task<string> GenerateRefreshTokenAsync(int size = 64)
         {
             var randomNumber = new byte[size];
@@ -102,5 +114,6 @@ namespace Jwt.Helpers.Generator.Concrete
                 return Task.FromResult(Convert.ToBase64String(randomNumber));
             }
         }
+        #endregion
     }
 }
