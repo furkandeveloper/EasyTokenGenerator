@@ -7,6 +7,7 @@ using System.IdentityModel.Tokens.Jwt;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
 using System.Security.Claims;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -90,6 +91,16 @@ namespace Jwt.Helpers.Generator.Concrete
             foreach (var claim in claimDto)
                 claims.Add(new Claim(claim.Type, claim.Value));
             return claims.ToArray();
+        }
+
+        public Task<string> GenerateRefreshTokenAsync(int size = 64)
+        {
+            var randomNumber = new byte[size];
+            using (var randomNumberGenerator = RandomNumberGenerator.Create())
+            {
+                randomNumberGenerator.GetBytes(randomNumber);
+                return Task.FromResult(Convert.ToBase64String(randomNumber));
+            }
         }
     }
 }

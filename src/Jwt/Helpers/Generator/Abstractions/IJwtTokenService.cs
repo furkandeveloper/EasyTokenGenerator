@@ -14,5 +14,7 @@ namespace Jwt.Helpers.Generator.Abstractions
         Task<string> GenerateJwtTokenAsync(Claim[] claims, Algorithms algorithms);
 
         Task<Claim[]> GenerateClaimsAsync(List<ClaimDto> claimDto);
+
+        Task<string> GenerateRefreshTokenAsync(int size = 64);
     }
 }
