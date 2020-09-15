@@ -1,4 +1,6 @@
-﻿using Jwt.Models;
+﻿using Jwt.Helpers.Generator.Abstractions;
+using Jwt.Helpers.Generator.Concrete;
+using Jwt.Models;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.IdentityModel.Tokens;
@@ -41,6 +43,7 @@ namespace Jwt.Services
                     opt.TokenValidationParameters.IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(jwtOptions.SecurityKey));
                 });
             services.AddSingleton(jwtOptions);
+            services.AddTransient<IJwtTokenService, JwtTokenManager>();
             return services;
         }
     }
