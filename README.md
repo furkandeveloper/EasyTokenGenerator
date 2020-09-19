@@ -32,7 +32,7 @@ JSON Web Token (JWT) is an open standard (RFC 7519) that defines a compact and s
 
 ## Getting Started
 
-Install [Easy Token Generator] (https://www.nuget.org/packages/EasyJwtTokenGenerator/) from Nuget.
+Install [EasyTokenGenerator](https://www.nuget.org/packages/EasyJwtTokenGenerator/) from Nuget.
 
 # Startup.cs Configuration
 
