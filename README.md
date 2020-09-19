@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/47147484/93689794-a669fd80-fada-11ea-92e9-8693d0ae9c50.png" />
+</p>
+
 # Token Generator for .Net
 [![CodeFactor](https://www.codefactor.io/repository/github/furkandeveloper/easytokengenerator/badge)](https://www.codefactor.io/repository/github/furkandeveloper/easytokengenerator)
 ![.NET Core](https://github.com/furkandeveloper/EasyTokenGenerator/workflows/.NET%20Core/badge.svg?branch=master)
