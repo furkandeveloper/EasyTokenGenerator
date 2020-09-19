@@ -5,6 +5,8 @@ Follow me;
   - Turn on your computer.
   - Prepare your coffee.
   - And sit back.
+  
+  [![CodeFactor](https://www.codefactor.io/repository/github/furkandeveloper/easytokengenerator/badge)](https://www.codefactor.io/repository/github/furkandeveloper/easytokengenerator)
 
 # What is Authentication?
 
