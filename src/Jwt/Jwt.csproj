@@ -2,11 +2,27 @@
 
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
+    <Authors>furkandeveloper</Authors>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
+    <PackageId>EasyJwtTokenGenerator</PackageId>
+    <Product>EasyJwtTokenGenerator</Product>
+    <Description>This library makes it easy to generate tokens, generate claims, read claims and generate refresh tokens in projects where you will use authentication.</Description>
+    <PackageTags>token,authentication,authentication-backend,jwt,jwt-token,jwt-authentication,token-authentication,token-based-authentication,token-based,dotnet,dotnetcore,csharp</PackageTags>
+    <PackageReleaseNotes>Implemented JwtTokenGenerator</PackageReleaseNotes>
+    <PackageIcon>easyTokenGenerator.png</PackageIcon>
   </PropertyGroup>
 
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.Authentication" Version="2.2.0" />
     <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="3.1.8" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="easyTokenGenerator.png">
+      <Pack>True</Pack>
+      <PackagePath></PackagePath>
+    </None>
   </ItemGroup>
 
 </Project>
