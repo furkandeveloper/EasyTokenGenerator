@@ -30,5 +30,68 @@ A token is a piece of data that has no meaning or use on its own, but combined w
 
 JSON Web Token (JWT) is an open standard (RFC 7519) that defines a compact and self-contained method for securely transmitting information between parties encoded as a JSON object. JWT has gained mass popularity due to its compact size which allows tokens to be easily transmitted via query strings, header attributes and within the body of a POST request.
 
+## Getting Started
 
-Note : This repo is under preparation.
+Install [Easy Token Generator] (https://www.nuget.org/packages/EasyJwtTokenGenerator/) from Nuget.
+
+# Startup.cs Configuration
+
+```csharp
+services.AddEasyJwtToken(options =>
+{
+      Configuration.Bind(nameof(JwtBearerOptions), options);
+      options.SecurityKey = Configuration.GetValue<string>("SecurityKey");
+});
+```
+
+## Usage
+Get the IJwoTokenGenerator interface from the Constructor.
+
+```csharp
+private readonly IJwtTokenService jwtTokenService;
+
+public AccountController(IJwtTokenService jwtTokenService)
+{
+      this.jwtTokenService = jwtTokenService;
+}
+```
+# Generate Claims
+```csharp
+var claims = await jwtTokenService.GenerateClaimsAsync(new List<Jwt.Models.ClaimDto>()
+{
+    new Jwt.Models.ClaimDto()
+    {
+        Type = "Email",
+        Value = "string@string.com"
+    }
+});
+```
+
+# Generate Jwt Token
+```csharp
+var jwtToken = await jwtTokenService.GenerateJwtTokenAsync(claims, Jwt.Models.Algorithms.HmacSha256Signature);
+```
+Easy Token Generator supported Security Algorithms. Look. 
+```csharp
+public enum Algorithms
+{
+    HmacSha256Signature,
+    HmacSha384,
+    HmacSha512,
+    RsaSha256Signature,
+    RsaSha384Signature,
+    RsaSha512Signature,
+    EcdsaSha256,
+    EcdsaSha384,
+    EcdsaSha512,
+    RsaSsaPssSha256,
+    RsaSsaPssSha384
+}
+```
+# Generate Refresh Token
+
+```csharp
+await jwtTokenService.GenerateRefreshTokenAsync(size:64)
+```
+
+You can look at the [demo](https://easy-token-generator.herokuapp.com/)
