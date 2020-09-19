@@ -1,5 +1,6 @@
 # Token Generator for .Net
 [![CodeFactor](https://www.codefactor.io/repository/github/furkandeveloper/easytokengenerator/badge)](https://www.codefactor.io/repository/github/furkandeveloper/easytokengenerator)
+![.NET Core](https://github.com/furkandeveloper/EasyTokenGenerator/workflows/.NET%20Core/badge.svg?branch=master)
 
 Heeey, This repo aims to dynamically and simply generate tokens in Token Based systems. 
 Follow me;
