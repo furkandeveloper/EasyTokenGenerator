@@ -1,12 +1,11 @@
 # Token Generator for .Net
+[![CodeFactor](https://www.codefactor.io/repository/github/furkandeveloper/easytokengenerator/badge)](https://www.codefactor.io/repository/github/furkandeveloper/easytokengenerator)
 
 Heeey, This repo aims to dynamically and simply generate tokens in Token Based systems. 
 Follow me;
   - Turn on your computer.
   - Prepare your coffee.
   - And sit back.
-  
-  [![CodeFactor](https://www.codefactor.io/repository/github/furkandeveloper/easytokengenerator/badge)](https://www.codefactor.io/repository/github/furkandeveloper/easytokengenerator)
 
 # What is Authentication?
 
