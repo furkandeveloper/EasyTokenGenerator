@@ -45,7 +45,7 @@ services.AddEasyJwtToken(options =>
 ```
 
 ## Usage
-Get the IJwoTokenGenerator interface from the Constructor.
+Get the IJwtTokenGenerator interface from the Constructor.
 
 ```csharp
 private readonly IJwtTokenService jwtTokenService;
