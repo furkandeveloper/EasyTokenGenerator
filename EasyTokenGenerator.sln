@@ -7,9 +7,46 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{54726968-1C6
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{E85E469E-5EE5-4B9F-8755-054E1CFFC1B8}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Jwt", "src\Jwt\Jwt.csproj", "{EE9A79B7-F5AB-409E-BCE5-EDBA500FF287}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{2148B6FD-CC88-4CC8-A60A-B9ED6EC5E0C9}"
+	ProjectSection(SolutionItems) = preProject
+		.gitignore = .gitignore
+		Dockerfile = Dockerfile
+	EndProjectSection
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "JwtUnitTest", "test\JwtUnitTest\JwtUnitTest.csproj", "{284277B2-95B3-47AF-B422-87CE80405A75}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "samples", "samples", "{31AD8FB9-9A76-45E1-8C7D-C006A471B46E}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "JwtSample", "samples\JwtSample\JwtSample.csproj", "{98B8B94A-4449-4C12-BB5D-430D43274849}"
+EndProject
 Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{EE9A79B7-F5AB-409E-BCE5-EDBA500FF287}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EE9A79B7-F5AB-409E-BCE5-EDBA500FF287}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EE9A79B7-F5AB-409E-BCE5-EDBA500FF287}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EE9A79B7-F5AB-409E-BCE5-EDBA500FF287}.Release|Any CPU.Build.0 = Release|Any CPU
+		{284277B2-95B3-47AF-B422-87CE80405A75}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{284277B2-95B3-47AF-B422-87CE80405A75}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{284277B2-95B3-47AF-B422-87CE80405A75}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{284277B2-95B3-47AF-B422-87CE80405A75}.Release|Any CPU.Build.0 = Release|Any CPU
+		{98B8B94A-4449-4C12-BB5D-430D43274849}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{98B8B94A-4449-4C12-BB5D-430D43274849}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{98B8B94A-4449-4C12-BB5D-430D43274849}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{98B8B94A-4449-4C12-BB5D-430D43274849}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{EE9A79B7-F5AB-409E-BCE5-EDBA500FF287} = {54726968-1C6B-4F80-AFFB-0F449B6CD63D}
+		{284277B2-95B3-47AF-B422-87CE80405A75} = {E85E469E-5EE5-4B9F-8755-054E1CFFC1B8}
+		{98B8B94A-4449-4C12-BB5D-430D43274849} = {31AD8FB9-9A76-45E1-8C7D-C006A471B46E}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {BF69C167-3D4B-4C3B-A157-9D03EE6F60D0}
