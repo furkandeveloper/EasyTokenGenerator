@@ -20,4 +20,4 @@ RUN dotnet publish "JwtSample.csproj" -c Release -o /app/publish
 FROM base AS final
 WORKDIR /app
 COPY --from=publish /app/publish .
-ENTRYPOINT ["dotnet", "JwtSample.dll"]
+CMD ASPNETCORE_URLS=http://*:$PORT dotnet JwtSample.dll
