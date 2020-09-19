@@ -77,6 +77,8 @@ namespace JwtSample
 
             // This is an library which explores versionned Controllers and reflect to Swagger.
             services.AddVersionedApiExplorer();
+
+            services.AddDocumentation();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
