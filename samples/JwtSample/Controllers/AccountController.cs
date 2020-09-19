@@ -24,7 +24,13 @@ namespace JwtSample.Controllers
         {
             this.jwtTokenService = jwtTokenService;
         }
-
+        /// <summary>
+        /// Generate Jwt Token
+        /// </summary>
+        /// <param name="model">Register model</param>
+        /// <returns>
+        /// String type jwt token.
+        /// </returns>
         [HttpPost(Name ="GenerateJwtToken")]
         [AllowAnonymous]
         public async Task<IActionResult> GenerateJwtTokenAsync([FromBody] GenerateJwtTokenRequestDto model)
@@ -41,10 +47,29 @@ namespace JwtSample.Controllers
             return Ok(jwtToken);
         }
 
+        /// <summary>
+        /// Authoriziable endpoint.
+        /// </summary>
+        /// <returns>
+        /// String book array.
+        /// </returns>
         [HttpGet(Name ="GetBooks")]
         public async Task<IActionResult> GetBooksAsync()
         {
             return Ok(new string[] { "Book1", "Book" });
+        }
+
+        /// <summary>
+        /// Generate Refresh Token
+        /// </summary>
+        /// <param name="size"></param>
+        /// <returns>
+        /// string type token
+        /// </returns>
+        [HttpPost("refreshToken",Name ="GenerateRefreshToken")]
+        public async Task<IActionResult> GenerateRefreshTokenAsync([FromQuery]int size)
+        {
+            return Ok(await jwtTokenService.GenerateRefreshTokenAsync(size));
         }
     }
 }
