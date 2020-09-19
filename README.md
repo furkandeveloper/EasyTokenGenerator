@@ -94,4 +94,52 @@ public enum Algorithms
 await jwtTokenService.GenerateRefreshTokenAsync(size:64)
 ```
 
+## Extensions
+
+# Claims Extensions
+
+```csharp
+public static Claim GetClaim(this IEnumerable<Claim> claims, string claimType)
+            => claims?.FirstOrDefault(x => x.Type == claimType);
+// Usage
+var claim = User.Claims.GetClaim("Email");
+```
+
+```csharp
+public static string GetClaimValue(this IEnumerable<Claim> claims, string claimType)
+            => claims?.FirstOrDefault(x => x.Type == claimType)?.Value;
+// Usage
+var claimValue = User.Claims.GetClaimValue("Email");
+```
+
+```csharp
+public static IEnumerable<Claim> GetClaims(this IEnumerable<Claim> claims, string claimType)
+            =>claims?.Where(x => x.Type == claimType);
+// Usage
+var claims = User.Claims.GetClaims("Email");
+```
+
+```csharp
+public static string GetEmail(this IEnumerable<Claim> claims)
+            => claims.GetClaim(ClaimTypes.Email)?.Value;
+// Usage
+var email = User.Claims.GetEmail();
+```
+
+
+```csharp
+public static string GetGivenName(this IEnumerable<Claim> claims)
+            => claims.GetClaim(ClaimTypes.GivenName)?.Value;
+// Usage
+var givenName = User.Claims.GetGivenName();
+```
+
+
+```csharp
+public static string GetExpiration(this IEnumerable<Claim> claims)
+            => claims.GetClaim(ClaimTypes.Expiration)?.Value;
+// Usage
+var expiration = User.Claims.GetExpiration();
+```
+
 You can look at the [demo](https://easy-token-generator.herokuapp.com/)
