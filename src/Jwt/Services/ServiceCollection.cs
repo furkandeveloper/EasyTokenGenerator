@@ -39,8 +39,14 @@ namespace Jwt.Services
             })
                 .AddJwtBearer(opt =>
                 {
-                    opt = jwtOptions;
+                    opt.ClaimsIssuer = jwtOptions.ClaimsIssuer;
+                    opt.Authority = jwtOptions.Authority;
+                    opt.Audience = jwtOptions.Audience;                    
                     opt.TokenValidationParameters.IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(jwtOptions.SecurityKey));
+                    opt.TokenValidationParameters.ValidateIssuerSigningKey = jwtOptions.TokenValidationParameters.ValidateIssuerSigningKey;
+                    opt.TokenValidationParameters.ValidateIssuer = jwtOptions.TokenValidationParameters.ValidateIssuer;
+                    opt.TokenValidationParameters.ValidateAudience = jwtOptions.TokenValidationParameters.ValidateAudience;
+                    opt.TokenValidationParameters.ValidateLifetime = jwtOptions.TokenValidationParameters.ValidateLifetime;
                 });
             services.AddSingleton(jwtOptions);
             services.AddTransient<IJwtTokenService, JwtTokenManager>();
