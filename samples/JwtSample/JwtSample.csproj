@@ -22,6 +22,7 @@
   </ItemGroup>
 
   <ItemGroup>
+	<PackageReference Include="Swashbuckle.AspNetCore.ReDoc" Version="5.0.0" />
     <PackageReference Include="Microsoft.AspNetCore.Mvc.Versioning.ApiExplorer" Version="4.1.1" />
     <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.10.9" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="5.0.0" />
