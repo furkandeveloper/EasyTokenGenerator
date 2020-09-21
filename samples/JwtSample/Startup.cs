@@ -93,6 +93,12 @@ namespace JwtSample
 
             app.UseSwagger();
 
+            app.UseReDoc(options =>
+            {
+                options.SpecUrl = "/swagger/1.0/swagger.json";
+                options.RoutePrefix = "api-docs-redoc";
+            });
+
             app.UseSwaggerUI(options =>
             {
                 options.EnableDeepLinking();
