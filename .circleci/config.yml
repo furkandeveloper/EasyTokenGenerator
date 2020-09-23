@@ -6,7 +6,6 @@
  jobs:
    build:
      executor: win/default
-     
      steps:
        - checkout
        - run: dotnet build
