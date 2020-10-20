@@ -9,6 +9,7 @@
 [![CircleCI](https://circleci.com/gh/furkandeveloper/EasyTokenGenerator.svg?style=svg)](https://circleci.com/gh/circleci/circleci-docs)
 ![Nuget](https://img.shields.io/nuget/dt/EasyJwtTokenGenerator)
 ![Nuget](https://img.shields.io/nuget/v/EasyJwtTokenGenerator)
+[![Maintainability](https://api.codeclimate.com/v1/badges/36d5a9eb1fc785c8b50c/maintainability)](https://codeclimate.com/github/furkandeveloper/EasyTokenGenerator/maintainability)
 
 Heeey, This repo aims to dynamically and simply generate tokens in Token Based systems. 
 Follow me;
