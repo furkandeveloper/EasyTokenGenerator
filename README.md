@@ -8,6 +8,7 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![CircleCI](https://circleci.com/gh/furkandeveloper/EasyTokenGenerator.svg?style=svg)](https://circleci.com/gh/circleci/circleci-docs)
 ![Nuget](https://img.shields.io/nuget/dt/EasyJwtTokenGenerator)
+![Nuget](https://img.shields.io/nuget/v/EasyJwtTokenGenerator)
 
 Heeey, This repo aims to dynamically and simply generate tokens in Token Based systems. 
 Follow me;
